@@ -1,0 +1,14 @@
+{
+  "name": "invoice-calculator-bug",
+  "version": "1.0.0",
+  "description": "A small invoice calculator with a bug for AI Fix Runner",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}

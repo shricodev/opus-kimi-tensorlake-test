@@ -1,0 +1,23 @@
+{
+  "name": "ai-fix-runner",
+  "version": "1.0.0",
+  "description": "AI Fix Runner – local repair agent evaluator",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run dev -w apps/api",
+    "dev:web": "npm run dev -w apps/web",
+    "build": "npm run build -w packages/shared && npm run build -w apps/api && npm run build -w apps/web",
+    "test": "npm run test --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w apps/api",
+    "fixtures:test": "cd fixtures/invoice-calculator-bug && npm test && cd ../markdown-parser-bug && npm test && cd ../todo-api-bug && npm test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
